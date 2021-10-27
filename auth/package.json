@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --poll src/index.ts"
+    "start": "ts-node-dev --poll src/index.ts",
+    "test": "jest --watchAll --no-cache"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "test-environment": "node",
+    "setFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
   },
   "author": "Musole Masu",
   "license": "ISC",
@@ -21,10 +29,16 @@
     "ts-node-dev": "^1.1.8"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.2.5",
+    "mongodb-memory-server": "^7.4.4",
+    "supertest": "^6.1.6",
+    "ts-jest": "^27.0.6",
     "typescript": "^4.4.3"
   }
 }
